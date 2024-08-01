@@ -15,25 +15,7 @@ html {
   border: 3px solid #0a192f;
   border-radius: 10px;
 }
-// body::-webkit-scrollbar {
-//   width: 100px;
-// }
-// body::-webkit-scrollbar-track {
-//   box-shadow: inset 0 0 5px grey;
-//   border-radius: 10px;
-// }
-// /* Handle */
-// body::-webkit-scrollbar-thumb {
-//   background: red;
-//   border-radius: 10px;
-// }
-
-// /* Handle on hover */
-// body::-webkit-scrollbar-thumb:hover {
-//   background: #b30000;
-// }
-
-//--------------------------------------
+//
 .main {
   background-color: #0a192f;
   width: 100%;
@@ -78,9 +60,6 @@ html {
 svg {
   vertical-align: middle;
 }
-// svg.feather {
-//   fill: none;
-// }
 
 svg:hover path {
   fill: #64ffda;
@@ -115,7 +94,6 @@ svg:hover path {
 }
 
 .line {
-  //   width: 50%;
   margin-top: 40px;
   border-left: 1px solid white;
   height: 80px;
@@ -127,10 +105,8 @@ svg:hover path {
   position: fixed;
   top: 0;
   height: 8vh;
-  // padding-top: 1%;
   padding-bottom: 0.8%;
   background-color: rgba(10, 25, 47, 0.85);
-  // position: absolute;
   display: flex;
   flex-direction: row;
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
@@ -145,7 +121,6 @@ svg:hover path {
 #logo {
   margin-top: 15px;
   margin-left: 30%;
-  // width: 100%;
   height: 55%;
   object-fit: cover;
   border-radius: 50%;
@@ -156,8 +131,7 @@ svg:hover path {
   width: 88%;
   height: 100%;
   margin-right: 5%;
-  // float: right;
-  // padding-left: 40%;
+  
 }
 
 .left-nav ol {
@@ -174,12 +148,10 @@ svg:hover path {
 .left-nav li {
   margin: 0;
   padding-top: 2%;
-  // padding-left: 1%;
-  // width: 25%;
+
 }
 
 .left-nav li::marker {
-  // margin-left: 2%;
   color: #64ffda;
   font-size: 15px;
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -198,7 +170,8 @@ svg:hover path {
   color: #64ffda;
 }
 
-#toggler, .navbar label {
+#toggler,
+.navbar label {
   display: none;
 }
 // ------------------
@@ -349,17 +322,14 @@ button {
 }
 
 .joblist {
-  // width: 40px;
   padding-left: 2%;
 }
 
 .job1 {
   width: 100%;
-  // height: auto;
 }
 .job2 {
   width: 100%;
-  // height: auto;
 }
 
 .job-description {
@@ -401,8 +371,7 @@ button {
 
 .job-detail ul li {
   list-style-type: none;
-  // color: #64ffda;
-  // position: absolute;
+  
   left: 0px;
   margin-bottom: 2%;
   font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
@@ -424,8 +393,7 @@ button {
   text-align: center;
   align-items: center;
   width: 100%;
-  // padding-left: 25%;
-  // padding-right: 25%;
+ 
 }
 
 .contact-me h2 {
@@ -442,20 +410,6 @@ button {
   padding-left: 25%;
 }
 
-// .contact-me a {
-//   color: #64ffda;
-//   padding: 2%;
-//   background-color: transparent;
-//   border: 1px solid #64ffda;
-//   border-radius: 4px;
-//   padding: 1.25rem 1.75rem;
-//   font-size: 15px;
-//   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;;
-//   line-height: 1;
-//   text-decoration: none;
-//   transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-//   // margin-top: 500px;
-// }
 
 // Footer
 
@@ -478,12 +432,6 @@ footer a {
 // ----------------------
 @media (min-width: 768px) and (max-width: 992px) {
 }
-
-
-
-
-
-
 
 // For MOBILE Version
 
@@ -517,9 +465,8 @@ footer a {
 
   .left-nav li::marker {
     // margin-left: 2%;
-  
+
     font-size: 14px;
-  
   }
 
   .navbar label {
@@ -535,7 +482,7 @@ footer a {
   #logo {
     height: 48%;
   }
-// ________________________________________
+  // ________________________________________
   .middle-container {
     margin-left: 5%;
     margin-right: 5%;
@@ -567,7 +514,7 @@ footer a {
     width: 100%;
     margin-left: 0;
   }
-  
+
   #content {
     font-size: 18px;
     align-content: center;
@@ -585,7 +532,7 @@ footer a {
   }
 
   // CSS for Experience (PART 2)
-  
+
   .work-history {
     margin-left: 0;
     width: 100%;
@@ -603,8 +550,8 @@ footer a {
   }
 
   .tablist button {
-    border-left: none ;
-    border-bottom: 2px solid #233554;;
+    border-left: none;
+    border-bottom: 2px solid #233554;
   }
 
   .tablist button:focus {
@@ -621,10 +568,6 @@ footer a {
     line-height: 1.5;
     white-space: nowrap;
   }
-
-  // #job-title {
-  //   width: 100%;
-  // }
 
   // CSS PART 3 MISSING STH
 
