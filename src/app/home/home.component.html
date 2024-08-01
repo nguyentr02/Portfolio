@@ -3,6 +3,8 @@
         <div class="logo">
             <a href=""><img id="logo" src="assets/images/Logo.png"></a>
         </div>
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><i class="ri-menu-line"></i></label>
         <div class="left-nav">
             <ol>
                 <li>
@@ -143,29 +145,29 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
 
         <div class="first-infor">
             <h1
-                style="font-weight: 400; font-size: 1.2rem; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;color: #64ffda;">
+                style="font-weight: 400; font-size: clamp(14px,5vw,16px); font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;color: #64ffda;">
                 Hi, my name is </h1>
             <h1
-                style="margin-top: -0.5%; font-size: 4.3rem; font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;color: #ccd6f6;">
+                style="margin-top: -0.5%; font-size: clamp(40px, 8vw, 80px); font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;color: #ccd6f6;">
                 Steven Truong.</h1>
             <h1
-                style="margin-top: -5%; font-size: 3.9rem;font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;color:#8892b0 ;">
+                style="margin-top: -5%; font-size: clamp(40px, 8vw, 80px);font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;color:#8892b0 ;">
                 I make friendly website.</h1>
             <p
-                style="width: 60%; margin-top: -1.5%; font-size: 1.4rem; font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif; color: #8892b0;">
+                style=" margin-top: -1.5%; font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif; color: #8892b0;">
                 I'm a software developer specializing in building exceptional digital experiences. I'm a creative
                 thinker and do-er who have a strong passion with website building. </p>
-            <a href="https://drive.google.com/file/d/1nv_2BZufHpq0sl_0Ve1wDjJyelnN_QJJ/view?usp=drive_link"
+            <a href="https://drive.google.com/file/d/1W6kqHefKPcIaxKcDaPZp6w0R-zhGfCEx/view?usp=sharing"
                 target="_blank"><button class="resume-btn">Check out my Resume!</button></a>
         </div>
         <div class="about-me">
             <div class="headline">
                 <p
-                    style="padding-right: 10px; line-height: 2.2 ; font-weight: 400; font-size: 1.5rem; margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
+                    style="padding-right: 10px; line-height: 1.45 ;align-content: center; font-weight: 400; font-size: clamp(26px,5vw,32px); margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
                     01.
                 </p>
                 <p
-                    style=" color: white;font-weight: 700; font-size: 1.8rem; font-family:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif ;">
+                    style=" color: white;font-weight: 700; font-size: clamp(26px,5vw,32px); font-family:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif ;">
                     About Me</p>
             </div>
             <div class="about-me-infor">
@@ -198,11 +200,11 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
         <div class="work-history">
             <div class="headline">
                 <p
-                    style="padding-right: 10px; line-height: 2.2 ; font-weight: 400; font-size: 1.5rem; margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
+                    style=" line-height: 1.45; align-content: center; padding-right: 10px; font-weight: 400; font-size: clamp(26px,5vw,32px); margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
                     02.
                 </p>
                 <p
-                    style=" color: white;font-weight: 700; font-size: 1.8rem; font-family:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif ;">
+                    style=" align-content: center; color: white;font-weight: 700; font-size: clamp(26px,5vw,32px); font-family:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif ;">
                     Where I've Worked</p>
             </div>
             <div class="inner">
@@ -221,20 +223,20 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                 <div class="joblist">
                     <div class="job1" *ngIf='showjob1'>
                         <h3 class="job-description">
-                            <span>Fullstack Developer, Team Manager</span>
+                            <span id="job-title">Fullstack Developer, Team Leader</span>
                             <span id="company">
-                                &nbsp;&#64;&nbsp;
+                            &nbsp;&#64;&nbsp;
                                 <a href="https://healthyfungi.com.au/" rel="noopener noreferrer"
                                     target=”_blank”>HealthyFungi</a>
                             </span>
                         </h3>
                         <p class="range">
-                            June 2023 - November 2023
+                            June 2023 - July 2024
                         </p>
                         <div class="job-detail">
                             <ul>
                                 <li>
-                                    Create a e-commerce website using Shopify
+                                    Create a e-commerce website using Shopify and Wordpress
                                 </li>
                                 <li>
                                     Make user-friendly and responsive UI.
@@ -278,7 +280,7 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
         <div class="contact-me">
             <div>
                 <p
-                    style="padding-right: 10px; line-height: 2.2 ; font-weight: 400; font-size: 1.2rem; margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
+                    style="line-height: 2.2 ; font-weight: 400; font-size: 16px;  color: #64ffda; width: 100%; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
                     03. Missing Something ?
                 </p>
                 <h2>Get In Touch</h2>
@@ -287,7 +289,8 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                     and experience to great use. Don't
                     hesitate to drop me a line at my email or give me a call. I'd love to
                     chat more about how I can help your team achieve amazing results!</p>
-                <a href="mailto:truongphamtuannguyen@gmail.com"><button class="resume-btn" style="font-size: 20px; padding: 1.25rem 1.75rem;">Say Hi</button></a>
+                <a href="mailto:truongphamtuannguyen@gmail.com"><button class="resume-btn"
+                        style="font-size: 20px; padding: 1.25rem 1.75rem;">Say Hi</button></a>
             </div>
         </div>
         <footer>
