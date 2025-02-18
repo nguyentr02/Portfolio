@@ -157,7 +157,7 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                 style=" margin-top: -1.5%; font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif; color: #8892b0;">
                 I'm a software developer specializing in building exceptional digital experiences. I'm a creative
                 thinker and do-er who have a strong passion with website building. </p>
-            <a href="https://drive.google.com/file/d/1W6kqHefKPcIaxKcDaPZp6w0R-zhGfCEx/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/1qU0acmi97QMymyycSMvjq0dYXGWU31gB/view?usp=sharing"
                 target="_blank"><button class="resume-btn">Check out my Resume!</button></a>
         </div>
         <div class="about-me">
@@ -213,6 +213,9 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                     <button class="tablist-button" id="tab-1" role="tab" tabindex="-1" aria-selected="true"(click)="changeInner(1)"><span>BAP Software</span></button>
                 </div> -->
                 <div class="tablist">
+                    <button (click)="toggleShowjob0()">
+                        Sarascare
+                    </button>
                     <button (click)="toggleShowjob1()">
                         HealthyFungi
                     </button>
@@ -221,28 +224,64 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                     </button>
                 </div>
                 <div class="joblist">
+                    <div class="job0" *ngIf='showjob0'>
+                        <h3 class="job-description">
+                            <span id="job-title">Web Developer</span>
+                            <span id="company">
+                                &nbsp;&#64;&nbsp;
+                                <a href="https://www.melbournediwali.com.au/" rel="noopener noreferrer"
+                                    target=”_blank”>MelbourneDiwali</a>
+                            </span>
+                        </h3>
+                        <p class="range">
+                            August 2024 - October 2024
+                        </p>
+                        <div class="job-detail">
+                            <ul>
+                                <li>
+                                    Develop website for Melbourne Diwali event using Wix platform.
+                                </li>
+                                <li>Proven ability to learn quickly and adapt to new situations.</li>
+                                <li>
+                                    Made user-friendly and responsive UI in order to bring event participants a good
+                                    experience.
+                                </li>
+                                <li>
+                                    Collaborated with a team of developers and actively participated in code reviews
+                                    and knowledge sharing sessions.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="job1" *ngIf='showjob1'>
                         <h3 class="job-description">
                             <span id="job-title">Fullstack Developer, Team Leader</span>
                             <span id="company">
-                            &nbsp;&#64;&nbsp;
+                                &nbsp;&#64;&nbsp;
                                 <a href="https://healthyfungi.com.au/" rel="noopener noreferrer"
                                     target=”_blank”>HealthyFungi</a>
                             </span>
                         </h3>
                         <p class="range">
-                            June 2023 - July 2024
+                            May 2023 - July 2024
                         </p>
                         <div class="job-detail">
                             <ul>
                                 <li>
-                                    Create a e-commerce website using Shopify and Wordpress
+                                    Developed and customized an e-commerce website using Shopify platform,
+                                    enabling online sales with features such as product catalog, shopping cart,
+                                    secure checkout, and order management.
                                 </li>
                                 <li>
-                                    Make user-friendly and responsive UI.
+                                    Utilized Shopify's Liquid templating language, HTML, CSS, JavaScript, and
+                                    Shopify's APIs to implement custom functionalities and integrations. </li>
+                                <li>
+                                    Manage team between other developer and designer in order to meet the
+                                    products’ requirement as well as deadline.
                                 </li>
                                 <li>
-                                    Work alongside owner to lead the development fulfill business requirements
+                                    Made user-friendly and responsive UI in order to bring customer a good
+                                    shopping experience.
                                 </li>
                             </ul>
                         </div>
@@ -257,19 +296,19 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                             </span>
                         </h3>
                         <p class="range">
-                            June 2022 - September 2022
+                            May 2022 - July 2022
                         </p>
                         <div class="job-detail">
                             <ul>
                                 <li>
-                                    Develop Website's Front-end and write Smart Contract using
-                                    Solidity.
+                                    Developed and deployed 3 Solidity smart contracts on the Ethereum network for
+                                    secure token transfers and crowdfunding functionality.
                                 </li>
+                                <li>
+                                    Utilized Web3.js and React to build the front-end user interface for interacting
+                                    with the deployed smart contracts. </li>
                                 <li>
                                     Proven ability to learn quickly and adapt to new situations.
-                                </li>
-                                <li>
-                                    Excellent communication skills, both verbal and written.
                                 </li>
                             </ul>
                         </div>

@@ -10,8 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  showjob1 = true;
+  showjob1 = false;
   showjob2 = false;
+  showjob0 = true;
   async ngOnInit(): Promise<void> {
     // const navbar = <HTMLElement>document.getElementsByClassName('navbar')[0];
     // // console.log(this.navbar);
@@ -54,14 +55,21 @@ export class HomeComponent {
       window.scrollTo(0,1950);
     }
   }
+  async toggleShowjob0() {
+    this.showjob1 = false;
+    this.showjob2 = false;
+    this.showjob0 = true;
+  }
 
   async toggleShowjob1() {
     this.showjob1 = true;
     this.showjob2 = false;
+    this.showjob0 = false;
   }
 
   async toggleShowjob2() {
     this.showjob1 = false;
     this.showjob2 = true;
+    this.showjob0 = false;
   }
 }
