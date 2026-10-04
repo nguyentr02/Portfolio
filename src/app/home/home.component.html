@@ -3,18 +3,19 @@
         <div class="logo">
             <a href=""><img id="logo" src="assets/images/Logo.png"></a>
         </div>
-        <input type="checkbox" id="toggler">
-        <label for="toggler"><i class="ri-menu-line"></i></label>
         <div class="left-nav">
             <ol>
                 <li>
-                    <a href="#about" class="about-nav">About</a>
+                    <a href="#about" (click)="scrollTo('about', $event)">About</a>
                 </li>
                 <li>
-                    <a href="#experience" class="exp-nav">Experience</a>
+                    <a href="#experience" (click)="scrollTo('experience', $event)">Experience</a>
                 </li>
                 <li>
-                    <a class="cnt-nav">Contact</a>
+                    <a href="#projects" (click)="scrollTo('projects', $event)">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact" (click)="scrollTo('contact', $event)">Contact</a>
                 </li>
             </ol>
         </div>
@@ -152,15 +153,16 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                 Steven Truong.</h1>
             <h1
                 style="margin-top: -5%; font-size: clamp(40px, 8vw, 80px);font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;color:#8892b0 ;">
-                I make friendly website.</h1>
+                I build user-focused web apps.</h1>
             <p
                 style=" margin-top: -1.5%; font-family: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif; color: #8892b0;">
-                I'm a software developer specializing in building exceptional digital experiences. I'm a creative
-                thinker and do-er who have a strong passion with website building. </p>
+                I'm a full-stack developer building responsive web applications with TypeScript, React, Angular, and
+                Node.js. I'm currently building a University Management System at CAIRA-DAU, and I'm passionate about
+                AI-assisted software engineering, cloud technologies, and secure, scalable applications.</p>
             <a href="https://drive.google.com/file/d/1qU0acmi97QMymyycSMvjq0dYXGWU31gB/view?usp=sharing"
                 target="_blank"><button class="resume-btn">Check out my Resume!</button></a>
         </div>
-        <div class="about-me">
+        <div class="about-me" id="about">
             <div class="headline">
                 <p
                     style="padding-right: 10px; line-height: 1.45 ;align-content: center; font-weight: 400; font-size: clamp(26px,5vw,32px); margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
@@ -185,19 +187,38 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                 </div>
                 <div class="personal-infor">
                     <p id="tittle">Location:</p>
-                    <p id="content">Melbourne, VIC 3000, Australia</p>
+                    <p id="content">Đà Nẵng, Việt Nam</p>
                 </div>
                 <div class="personal-infor">
                     <p id="tittle">Phone:</p>
-                    <p id="content">(+61) 432 920 365</p>
+                    <p id="content">(+84) 889 550 602</p>
                 </div>
                 <div class="personal-infor">
                     <p id="tittle">Email:</p>
-                    <p id="content">truongphamtuannguyen&#64;gmail.com</p>
+                    <p id="content">truongphamtuannguyen<wbr>&#64;gmail.com</p>
+                </div>
+                <div class="personal-infor">
+                    <p id="tittle">Education:</p>
+                    <p id="content">
+                        <strong class="degree">Bachelor of Computer Science</strong> - Swinburne University of
+                        Technology (2025)<br>
+                        <strong class="degree">Bachelor of Software Engineering</strong> - VNUK Institute (2023)
+                    </p>
+                </div>
+                <div class="personal-infor">
+                    <p id="tittle">Skills:</p>
+                    <p id="content">
+                        JavaScript, TypeScript, HTML, CSS/SCSS, PHP, SQL, React, Angular, Vue.js, Node.js,
+                        Express.js, MongoDB, MySQL, RESTful APIs, Git, Claude Code
+                    </p>
+                </div>
+                <div class="personal-infor">
+                    <p id="tittle">Certificates:</p>
+                    <p id="content">Swinburne Industry Experience Certificate, IELTS 7.0, PTE 69, SAT 1320</p>
                 </div>
             </div>
         </div>
-        <div class="work-history">
+        <div class="work-history" id="experience">
             <div class="headline">
                 <p
                     style=" line-height: 1.45; align-content: center; padding-right: 10px; font-weight: 400; font-size: clamp(26px,5vw,32px); margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
@@ -208,119 +229,102 @@ c-293 30 -1331 42 -1583 19 -656 -60 -1086 -223 -1390 -527 -229 -229 -378
                     Where I've Worked</p>
             </div>
             <div class="inner">
-                <!-- <div role="tablist" class="tablist">
-                    <button class="tablist-button" id="tab-0" role="tab" tabindex="0" aria-selected="true" (click)="changeInner(0)"><span>HealthyFungi</span></button>
-                    <button class="tablist-button" id="tab-1" role="tab" tabindex="-1" aria-selected="true"(click)="changeInner(1)"><span>BAP Software</span></button>
-                </div> -->
-                <div class="tablist">
-                    <button (click)="toggleShowjob0()">
-                        Sarascare
+                <div class="tablist" role="tablist">
+                    @for (job of jobs; track job.tab; let i = $index) {
+                    <button role="tab" [class.active]="i === selectedJob" [attr.aria-selected]="i === selectedJob"
+                        (click)="selectJob(i)">
+                        {{ job.tab }}
                     </button>
-                    <button (click)="toggleShowjob1()">
-                        HealthyFungi
-                    </button>
-                    <button (click)="toggleShowjob2()">
-                        BAP Software
-                    </button>
+                    }
                 </div>
                 <div class="joblist">
-                    <div class="job0" *ngIf='showjob0'>
+                    @for (job of jobs; track job.tab; let i = $index) {
+                    <div class="job" [class.hidden]="i !== selectedJob" [attr.aria-hidden]="i !== selectedJob">
                         <h3 class="job-description">
-                            <span id="job-title">Web Developer</span>
+                            <span id="job-title">{{ job.title }}</span>
                             <span id="company">
                                 &nbsp;&#64;&nbsp;
-                                <a href="https://www.melbournediwali.com.au/" rel="noopener noreferrer"
-                                    target=”_blank”>MelbourneDiwali</a>
+                                @if (job.companyUrl) {
+                                <a [href]="job.companyUrl" rel="noopener noreferrer" target="_blank">{{ job.company }}</a>
+                                } @else {
+                                {{ job.company }}
+                                }
                             </span>
                         </h3>
                         <p class="range">
-                            August 2024 - October 2025
+                            {{ job.range }}@if (job.location) { &nbsp;|&nbsp; {{ job.location }} }
                         </p>
                         <div class="job-detail">
                             <ul>
-                                <li>
-                                    Develop website for Melbourne Diwali event using Wix platform.
-                                </li>
-                                <li>Proven ability to learn quickly and adapt to new situations.</li>
-                                <li>
-                                    Made user-friendly and responsive UI in order to bring event participants a good
-                                    experience.
-                                </li>
-                                <li>
-                                    Collaborated with a team of developers and actively participated in code reviews
-                                    and knowledge sharing sessions.
-                                </li>
+                                @for (detail of job.details; track $index) {
+                                <li>{{ detail }}</li>
+                                }
                             </ul>
                         </div>
                     </div>
-                    <div class="job1" *ngIf='showjob1'>
-                        <h3 class="job-description">
-                            <span id="job-title">Fullstack Developer, Team Leader</span>
-                            <span id="company">
-                                &nbsp;&#64;&nbsp;
-                                <a href="https://healthyfungi.com.au/" rel="noopener noreferrer"
-                                    target=”_blank”>HealthyFungi</a>
-                            </span>
-                        </h3>
-                        <p class="range">
-                            May 2023 - July 2024
-                        </p>
-                        <div class="job-detail">
-                            <ul>
-                                <li>
-                                    Developed and customized an e-commerce website using Shopify platform,
-                                    enabling online sales with features such as product catalog, shopping cart,
-                                    secure checkout, and order management.
-                                </li>
-                                <li>
-                                    Utilized Shopify's Liquid templating language, HTML, CSS, JavaScript, and
-                                    Shopify's APIs to implement custom functionalities and integrations. </li>
-                                <li>
-                                    Manage team between other developer and designer in order to meet the
-                                    products’ requirement as well as deadline.
-                                </li>
-                                <li>
-                                    Made user-friendly and responsive UI in order to bring customer a good
-                                    shopping experience.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="job2" *ngIf="showjob2">
-                        <h3 class="job-description">
-                            <span>Blockchain Intern Developer</span>
-                            <span id="company">
-                                &nbsp;&#64;&nbsp;
-                                <a href="https://bap-software.net/en/" rel="noopener noreferrer" target=”_blank”>BAP
-                                    Software</a>
-                            </span>
-                        </h3>
-                        <p class="range">
-                            May 2022 - July 2022
-                        </p>
-                        <div class="job-detail">
-                            <ul>
-                                <li>
-                                    Developed and deployed 3 Solidity smart contracts on the Ethereum network for
-                                    secure token transfers and crowdfunding functionality.
-                                </li>
-                                <li>
-                                    Utilized Web3.js and React to build the front-end user interface for interacting
-                                    with the deployed smart contracts. </li>
-                                <li>
-                                    Proven ability to learn quickly and adapt to new situations.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
-        <div class="contact-me">
+        <div class="projects" id="projects">
+            <div class="headline">
+                <p
+                    style=" line-height: 1.45; align-content: center; padding-right: 10px; font-weight: 400; font-size: clamp(26px,5vw,32px); margin-right: 2px; color: #64ffda; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
+                    03.
+                </p>
+                <p
+                    style=" align-content: center; color: white;font-weight: 700; font-size: clamp(26px,5vw,32px); font-family:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif ;">
+                    Projects</p>
+            </div>
+            <div class="project-grid">
+                @for (project of projects; track project.name) {
+                <div class="project-card">
+                    @if (project.previewUrl) {
+                    <a class="project-preview" [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
+                        [attr.aria-label]="'Open ' + project.name + ' live site'">
+                        <iframe [src]="project.previewUrl" [title]="project.name + ' live preview'" loading="lazy"
+                            tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+                    </a>
+                    }
+                    <div class="project-top">
+                        <svg class="project-folder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                        </svg>
+                        <div class="project-links">
+                            @if (project.repoUrl) {
+                            <a [href]="project.repoUrl" target="_blank" rel="noopener noreferrer"
+                                [attr.aria-label]="project.name + ' source code'">GitHub</a>
+                            }
+                            @if (project.demoUrl) {
+                            <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
+                                [attr.aria-label]="project.name + ' live demo'">Live ↗</a>
+                            }
+                        </div>
+                    </div>
+                    <h3 class="project-name">
+                        @if (project.demoUrl) {
+                        <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                        } @else {
+                        {{ project.name }}
+                        }
+                    </h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <ul class="project-tech">
+                        @for (tech of project.tech; track tech) {
+                        <li>{{ tech }}</li>
+                        }
+                    </ul>
+                </div>
+                }
+            </div>
+        </div>
+        <div class="contact-me" id="contact">
             <div>
                 <p
                     style="line-height: 2.2 ; font-weight: 400; font-size: 16px;  color: #64ffda; width: 100%; font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace ;">
-                    03. Missing Something ?
+                    04. Missing Something ?
                 </p>
                 <h2>Get In Touch</h2>
                 <p class="contact-me-p" style="  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;

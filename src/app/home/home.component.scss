@@ -116,7 +116,8 @@ svg:hover path {
 }
 
 .left-nav ol {
-  width: 25%;
+  width: auto;
+  gap: 2.5rem;
   margin: 0;
   height: 100%;
   display: flex;
@@ -150,10 +151,6 @@ svg:hover path {
   color: #64ffda;
 }
 
-#toggler,
-.navbar label {
-  display: none;
-}
 // ------------------
 
 // Custom main information
@@ -197,6 +194,13 @@ svg:hover path {
 // -------------------
 
 // Custom About me
+.about-me,
+.work-history,
+.projects,
+.contact-me {
+  scroll-margin-top: 80px;
+}
+
 .about-me {
   margin-top: 20%;
   width: 80%;
@@ -228,19 +232,26 @@ svg:hover path {
 }
 
 #tittle {
-  width: 20%;
-  margin-right: 5%;
+  flex: 0 0 9em;
+  margin-right: 1em;
   color: #64ffda;
   line-height: 1.3;
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 #content {
-  width: 75%;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
   // font-size: 2vmin;
   color: #8892b0;
   font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
     system-ui, sans-serif;
+}
+
+.degree {
+  color: #ccd6f6;
+  font-weight: 600;
 }
 // ---------------
 
@@ -292,7 +303,8 @@ button {
   border-left: 2px solid #233554;
 }
 
-.tablist button:focus {
+.tablist button:focus,
+.tablist button.active {
   color: #64ffda;
   border-left: 2px solid #64ffda;
 }
@@ -303,13 +315,18 @@ button {
 
 .joblist {
   padding-left: 4%;
+  // Stack every job in one grid cell so the panel is always as tall as the
+  // longest job, and switching tabs doesn't shift the sections below.
+  display: grid;
 }
 
-.job1 {
+.job {
+  grid-area: 1 / 1;
   width: 100%;
 }
-.job2 {
-  width: 100%;
+
+.job.hidden {
+  visibility: hidden;
 }
 
 
@@ -319,7 +336,7 @@ button {
   font-size: 22px;
   font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
     system-ui, sans-serif;
-  line-height: 0.6;
+  line-height: 1.3;
 }
 
 #company {
@@ -408,6 +425,149 @@ footer a {
   color: #64ffda;
 }
 
+// Custom Projects
+.projects {
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 20%;
+}
+
+.projects .headline {
+  margin-bottom: 3%;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border-radius: 4px;
+  background-color: #112240;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-preview {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin: -28px -24px 24px;
+  border-radius: 4px 4px 0 0;
+  background-color: #0a192f;
+  border-bottom: 1px solid #233554;
+}
+
+// Render the site at a desktop width (250%) and scale it down to fit the card.
+.project-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250%;
+  height: 250%;
+  border: 0;
+  transform: scale(0.4);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+// Tint the preview until hover so it sits with the dark theme.
+.project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 25, 47, 0.25);
+  transition: background-color 0.25s ease;
+}
+
+.project-preview:hover::after {
+  background-color: transparent;
+}
+
+.project-card:has(.project-preview) .project-folder {
+  display: none;
+}
+
+.project-card:has(.project-preview) .project-top {
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.project-folder {
+  width: 40px;
+  height: 40px;
+  color: #64ffda;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.project-links a {
+  color: #a8b2d1;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.project-links a:hover,
+.project-name a:hover {
+  color: #64ffda;
+}
+
+.project-name {
+  margin: 0 0 10px;
+  color: #ccd6f6;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
+}
+
+.project-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-description {
+  flex: 1;
+  margin: 0 0 20px;
+  color: #a8b2d1;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #8892b0;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+}
+
 // ----------------------
 @media (min-width: 768px) and (max-width: 992px) {
 }
@@ -425,43 +585,44 @@ footer a {
   }
 
   .navbar {
-    // padding-bottom: 4%;
-    display: none;
-    height: 12%;
-    box-shadow: none;
-  }
-
-  .left-nav {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .left-nav ol {
-    flex-direction: column;
+    height: 56px;
+    padding-bottom: 0;
     align-items: center;
-    cursor: pointer;
   }
 
-  .left-nav li::marker {
-    // margin-left: 2%;
-
-    font-size: 14px;
-  }
-
-  .navbar label {
-    display: inline-flex;
+  .logo {
+    width: auto;
+    height: 100%;
+    margin-left: 16px;
+    display: flex;
     align-items: center;
-    cursor: pointer;
-  }
-
-  #toggler:checked ~ .left-nav {
-    max-height: 100%;
   }
 
   #logo {
-    height: 48%;
+    margin: 0;
+    height: 36px;
   }
+
+  .left-nav {
+    width: auto;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+
+  .left-nav ol {
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .left-nav li {
+    padding-top: 0;
+  }
+
+  .left-nav a {
+    font-size: 12px;
+  }
+
   // ________________________________________
   .middle-container {
     margin-left: 5%;
@@ -508,14 +669,21 @@ footer a {
   }
 
   #tittle {
+    flex: none;
+    margin-right: 0;
     font-size: 5vw;
   }
 
   // CSS for Experience (PART 2)
 
-  .work-history {
+  .work-history,
+  .projects {
     margin-left: 0;
     width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
   .inner {
@@ -530,11 +698,20 @@ footer a {
   }
 
   .tablist button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 4px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .tablist button {
     border-left: none;
     border-bottom: 2px solid #233554;
   }
 
-  .tablist button:focus {
+  .tablist button:focus,
+  .tablist button.active {
     color: #64ffda;
     border-bottom: 2px solid #64ffda;
     border-left: none;
